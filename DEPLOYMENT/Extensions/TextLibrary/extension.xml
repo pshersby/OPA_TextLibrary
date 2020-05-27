@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Put this file in the Named folder in the extensiond directory of the opa project
+projectfolder\development\extensions\TextLibrary\extension.xml
+put the jar and dll files to which this refers in projectfolder\development\extensions\TextLibrary\Lib\
+-->
+
+<extension>
+    <functions>
+        <function name="CapitaliseAll" return-type="text">
+            <arg name="textValue" type="text"/>
+            <handler platform="java" class="com.pks.opa.extension.text.CapitaliseAll"/>
+            <handler platform="dotnet" class="PKS.OPA.Extensions.Text.CapitaliseAll"/>
+        </function>
+
+        <function name="CapitaliseFirstLetter" return-type="text">
+            <arg name="textValue" type="text"/>
+            <handler platform="java" class="com.pks.opa.extension.text.CapitaliseFirstLetter"/>
+            <handler platform="dotnet" class="PKS.OPA.Extensions.Text.CapitaliseFirstLetter"/>
+        </function>
+
+        <function name="CapitaliseEachWord" return-type="text">
+            <arg name="textValue" type="text"/>
+            <handler platform="java" class="com.pks.opa.extension.text.CapitaliseEachWord"/>
+            <handler platform="dotnet" class="PKS.OPA.Extensions.Text.CapitaliseEachWord"/>
+        </function>
+
+        <function name="Trim" return-type="text">
+            <arg name="textValue" type="text"/>
+            <handler platform="java" class="com.pks.opa.extension.text.Trim"/>
+            <handler platform="dotnet" class="PKS.OPA.Extensions.Text.Trim"/>
+        </function>
+
+      <function name="PositionOf" return-type="number">
+        <arg name="textToFind" type="text"/>
+        <arg name="textToLookWithin" type="text"/>
+        <arg name="startPosition" type="number"/>
+        <handler platform="java" class="com.pks.opa.extension.text.PositionOf"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.PositionOf"/>
+      </function>
+
+      <function name="AssembleName" return-type="text">
+        <arg name="firstName" type="text"/>
+        <arg name="middleNames" type="text"/>
+        <arg name="lastName" type="text"/>
+        <handler platform="java" class="com.pks.opa.extension.text.AssembleName"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.AssembleName"/>
+      </function>
+
+      <function name="ExtractPropertyKeyOrValue" return-type="text">
+        <arg name="keyValuePair" type="text"/>
+        <arg name="getKey" type="boolean"/>
+        <handler platform="java" class="com.pks.opa.extension.text.ExtractPropertyKeyOrValue"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.ExtractPropertyKeyOrValue"/>
+      </function>
+
+      <function name="TheNamesAreReasonableMatch" return-type="boolean">
+        <arg name="name1" type="text"/>
+        <arg name="name2" type="text"/>
+        <arg name="isPerson" type="boolean"/>
+        <handler platform="java" class="com.pks.opa.extension.text.CheckNameCompatibility"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.CheckNameCompatibility"/>
+      </function>
+
+      <function name="BankNamesAreReasonableMatch" return-type="boolean">
+        <arg name="entityName" type="text"/>
+        <arg name="bankAccountName" type="text"/>
+        <arg name="entityType" type="text"/>
+        <arg name="excludeFromEnd" type="text"/>
+        <handler platform="java" class="com.pks.opa.extension.text.CheckBankNameCompatibility"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.CheckBankNameCompatibility"/>
+      </function>
+
+      <function name="LongestWord" return-type="number">
+        <arg name="textValue" type="text"/>
+        <handler platform="java" class="com.pks.opa.extension.text.LongestWord"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.LongestWord"/>
+      </function>
+
+      <function name="GetVersionString" return-type="text">
+        <arg name="MajorVersion" type="number"/>
+        <arg name="InterfaceVersion" type="number"/>
+        <arg name="MaintenanceReleaseVersion" type="number"/>
+        <arg name="TestCandiidateVersion" type="number"/>
+        <handler platform="java" class="com.pks.opa.extension.text.GetVersionString"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.GetVersionString"/>
+      </function>
+
+      <function name="ContainsVisibleCharacters" return-type="boolean">
+        <arg name="textValue" type="text"/>
+        <arg name="falseForUnknownUncertain" type="boolean"/>
+        <handler platform="java" class="com.pks.opa.extension.text.ContainsVisibleCharacters"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.ContainsVisibleCharacters"/>
+      </function>
+
+      <function name="GetTextLibraryVersion" return-type="text">
+        <handler platform="java" class="com.pks.opa.extension.text.GetTextLibraryVersion"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.GetTextLibraryVersion"/>
+      </function>
+
+      <function name="ValueForKey" return-type="text">
+        <arg name="parameterString" type="text"/>
+        <arg name="keyName" type="text"/>
+        <arg name="delimiterSet" type="text"/>
+        <handler platform="java" class="com.pks.opa.extension.text.ValueForKey"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.ValueForKey"/>
+      </function>
+
+      <function name="ReplaceAnyOf" return-type="text">
+        <arg name="originalText" type="text"/>
+        <arg name="searchForList" type="text"/>
+        <arg name="replacementText" type="text"/>
+        <arg name="delimiter" type ="text" />
+        <handler platform="java" class="com.pks.opa.extension.text.ReplaceCharacters"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.ReplaceCharacters"/>
+      </function>
+
+      <function name="ReplaceList" return-type="text">
+        <arg name="originalText" type="text"/>
+        <arg name="searchForList" type="text"/>
+        <arg name="replacementList" type="text"/>
+        <arg name="delimiter" type ="text" />
+        <handler platform="java" class="com.pks.opa.extension.text.ReplaceSubStringList"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.ReplaceSubStringList"/>
+      </function>
+
+      <function name="ContainsAnyOf" return-type="boolean">
+        <arg name="originalText" type="text"/>
+        <arg name="searchForList" type="text"/>
+        <arg name="delimiter" type ="text" />
+        <handler platform="java" class="com.pks.opa.extension.text.ContainsAnyOf"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.ContainsAnyOf"/>
+      </function>
+      <function name="LimitedToCharacters" return-type="text">
+        <arg name="originalText" type="text"/>
+        <arg name="permittedCharacters" type="text"/>
+        <handler platform="java" class="com.pks.opa.extension.text.LimitedToCharacters"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.LimitedToCharacters"/>
+      </function>
+      
+        <function name="InstanceTextValueList" return-type="text">
+        <arg name="relationship" type="text"/>
+        <arg name="attribute" type="text"/>
+        <arg name="delimiter" type="text"/>
+        <arg name="instanceCount" type="number"/>
+        <handler platform="java" class="com.pks.opa.extension.text.InstanceTextValueList"/>
+        <handler platform="dotnet" class="PKS.OPA.Extensions.Text.InstanceTextValueList"/>
+      </function>
+
+    </functions>
+</extension>
+
